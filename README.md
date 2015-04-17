@@ -13,3 +13,7 @@ Add all cURL options in an array:
 `$options = array(
 CURLOPT_URL=>'http://thambaru.com'
 );`
+
+##Output
+
+Same output of curl exec.
