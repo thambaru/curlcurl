@@ -1,6 +1,6 @@
 # Curl cURL
 
-This is a helper class to make your code more clean by curling cURL just into a line. With Curl cUrl, you don't have to init or close the connection as it does itself. Just wrap up options and kaboom!
+This is a helper class to make your code more clean by curling cURL just into a line. With Curl cUrl, you don't have to init or close the connection as it does by itself. Just wrap up options and kaboom!
 
 ##Usage
 
