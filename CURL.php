@@ -14,9 +14,7 @@ class Curl {
     public static function curl($setopt) {
         if (is_array($setopt)) {
             $cc = curl_init();
-            foreach ($setopt as $option => $attr) {
-                curl_setopt($cc, $option, $attr);
-            }
+            curl_setopt_array($cc, $setopt);
             $output = curl_exec($cc);
             curl_close($cc);
             return $output;
