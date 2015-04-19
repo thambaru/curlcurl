@@ -230,7 +230,7 @@ class Curl {
     }
 
     function httpAuth($value) {
-        $this->set_opt[CURLOPT_HTTPAUTH] = $value;
+        $this->set_opt[CURLOPT_HTTPAUTH] = 'CURLAUTH_' . $value;
         return $this;
     }
 
@@ -270,7 +270,7 @@ class Curl {
     }
 
     function proxyAuth($value) {
-        $this->set_opt[CURLOPT_PROXYAUTH] = $value;
+        $this->set_opt[CURLOPT_PROXYAUTH] = 'CURLAUTH_' . $value;
         return $this;
     }
 
@@ -280,7 +280,7 @@ class Curl {
     }
 
     function proxyType($value) {
-        $this->set_opt[CURLOPT_PROXYTYPE] = $value;
+        $this->set_opt[CURLOPT_PROXYTYPE] = 'CURLPROXY_' . $value;
         return $this;
     }
 
@@ -314,7 +314,7 @@ class Curl {
         return $this;
     }
 
-    function timeValue($value) {
+    function timeValue($value = 'CURL_TIMECOND_IFMODSINCE') {
         $this->set_opt[CURLOPT_TIMEVALUE] = $value;
         return $this;
     }
