@@ -33,23 +33,33 @@
 
 <p>This is a helper class to make your code more clean by curling cURL just into a line. With Curl cUrl, you don't have to init or close the connection as it does by itself. Just wrap up options and kaboom!</p>
 
+<p>With version 2.0 all options can be chain-loaded.</p>
+
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p>Require curl.php and call:</p>
+<p>Require curlCurl.php and create object:</p>
 
-<p><code>CURL::curl($options);</code></p>
+<p><code>$curlCurl = new Curl();</code></p>
 
-<p>Add all cURL options in an array:</p>
+<p>Then chain all options and curl!</p>
 
-<p><code>$options = array(
-CURLOPT_URL=&gt;'http://thambaru.com'
-);</code></p>
+<p><code>$curlCurl-&gt;url("http://thambaru.com")-&gt;curl();</code></p>
 
 <h2>
 <a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h2>
 
 <p>Same output of curl exec.</p>
+
+<h2>
+<a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<ul>
+<li>All options are in camelCase.</li>
+<li>Option values like "CURLSSH_AUTH_PUBLICKEY" can be directly set as <code>PUBLICKEY</code>.</li>
+<li>CURLOPT_INTERFACE has been set as <code>interfaceName()</code> to avoid conflicts with PHP.</li>
+<li>You must call <code>curl()</code> at the end if cURL needs to be executed.</li>
+</ul>
       </section>
     </div>
 
