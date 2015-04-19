@@ -2,18 +2,24 @@
 
 This is a helper class to make your code more clean by curling cURL just into a line. With Curl cUrl, you don't have to init or close the connection as it does by itself. Just wrap up options and kaboom!
 
+With version 2.0 all options can be chain-loaded.
+
 ##Usage
 
-Require curl.php and call:
+Require curl.php and create object:
 
-`CURL::curl($options);`
+`$curlCurl = new Curl();`
 
-Add all cURL options in an array:
+Then chain all options and curl!
 
-`$options = array(
-CURLOPT_URL=>'http://thambaru.com'
-);`
+'$curlCurl->url('http://thambaru.com')->curl();'`
 
 ##Output
 
 Same output of curl exec.
+
+##Notes
+
+* All options are in camelCase.
+* Option values like "CURLSSH_AUTH_PUBLICKEY" can be directly set as "PUBLICKEY".
+* CURLOPT_INTERFACE has been set as "interfaceName" to avoid conflicts with PHP.
