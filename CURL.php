@@ -19,11 +19,6 @@ class Curl {
      * 
      */
 
-    function url($value) {
-        $this->set_opt[CURLOPT_URL] = $value;
-        return $this;
-    }
-
     function autoReferer($value = TRUE) {
         $this->set_opt[CURLOPT_AUTOREFERER] = $value;
         return $this;
@@ -304,8 +299,8 @@ class Curl {
         return $this;
     }
 
-    function timeCondition($value) {
-        $this->set_opt[CURLOPT_TIMECONDITION] = $value;
+    function timeCondition($value = 'IFMODSINCE') {
+        $this->set_opt[CURLOPT_TIMECONDITION] = 'CURL_TIMECOND_' . $value;
         return $this;
     }
 
@@ -339,8 +334,174 @@ class Curl {
         return $this;
     }
 
-    function ipResolve($value) {
+    function ipResolve($value = 'WHATEVER') {
         $this->set_opt[CURLOPT_IPRESOLVE] = 'CURL_IPRESOLVE_' . $value;
+        return $this;
+    }
+
+    /*
+     * 
+     * $value should be a string for the following values.
+     * 
+     */
+
+    function caInfo($value) {
+        $this->set_opt[CURLOPT_CAINFO] = $value;
+        return $this;
+    }
+
+    function caPath($value) {
+        $this->set_opt[CURLOPT_CAPATH] = $value;
+        return $this;
+    }
+
+    function cookie($value) {
+        $this->set_opt[CURLOPT_COOKIE] = $value;
+        return $this;
+    }
+
+    function cookieFile($value) {
+        $this->set_opt[CURLOPT_COOKIEFILE] = $value;
+        return $this;
+    }
+
+    function cookieJar($value) {
+        $this->set_opt[CURLOPT_COOKIEJAR] = $value;
+        return $this;
+    }
+
+    function customRequest($value) {
+        $this->set_opt[CURLOPT_CUSTOMREQUEST] = $value;
+        return $this;
+    }
+
+    function egdSocket($value) {
+        $this->set_opt[CURLOPT_EGDSOCKET] = $value;
+        return $this;
+    }
+
+    function encoding($value) {
+        $this->set_opt[CURLOPT_ENCODING] = $value;
+        return $this;
+    }
+
+    function ftpPort($value) {
+        $this->set_opt[CURLOPT_FTPPORT] = $value;
+        return $this;
+    }
+
+    function interfaceName($value) {
+        $this->set_opt[CURLOPT_INTERFACE] = $value;
+        return $this;
+    }
+
+    function keyPasswd($value) {
+        $this->set_opt[CURLOPT_KEYPASSWD] = $value;
+        return $this;
+    }
+
+    function krb4Level($value) {
+        $this->set_opt[CURLOPT_KRB4LEVEL] = $value;
+        return $this;
+    }
+
+    function postFields($value) {
+        $this->set_opt[CURLOPT_POSTFIELDS] = $value;
+        return $this;
+    }
+
+    function proxy($value) {
+        $this->set_opt[CURLOPT_PROXY] = $value;
+        return $this;
+    }
+
+    function proxyUserPwd($value) {
+        $this->set_opt[CURLOPT_PROXYUSERPWD] = $value;
+        return $this;
+    }
+
+    function randomFile($value) {
+        $this->set_opt[CURLOPT_RANDOM_FILE] = $value;
+        return $this;
+    }
+
+    function range($value) {
+        $this->set_opt[CURLOPT_RANGE] = $value;
+        return $this;
+    }
+
+    function referer($value) {
+        $this->set_opt[CURLOPT_REFERER] = $value;
+        return $this;
+    }
+
+    function sshHostPublicKeyMD5($value) {
+        $this->set_opt[CURLOPT_SSH_HOST_PUBLIC_KEY_MD5] = $value;
+        return $this;
+    }
+
+    function sshPublicKeyFile($value) {
+        $this->set_opt[CURLOPT_SSH_PUBLIC_KEYFILE] = $value;
+        return $this;
+    }
+
+    function sshPrivateKeyfile($value) {
+        $this->set_opt[CURLOPT_SSH_PRIVATE_KEYFILE] = $value;
+        return $this;
+    }
+
+    function sslCipherList($value) {
+        $this->set_opt[CURLOPT_SSL_CIPHER_LIST] = $value;
+        return $this;
+    }
+
+    function sslCert($value) {
+        $this->set_opt[CURLOPT_SSLCERT] = $value;
+        return $this;
+    }
+
+    function sslCertPasswd($value) {
+        $this->set_opt[CURLOPT_SSLCERTPASSWD] = $value;
+        return $this;
+    }
+
+    function sslEngine($value) {
+        $this->set_opt[CURLOPT_SSLENGINE] = $value;
+        return $this;
+    }
+
+    function sslEngineDefault($value) {
+        $this->set_opt[CURLOPT_SSLENGINE_DEFAULT] = $value;
+        return $this;
+    }
+
+    function sslKey($value) {
+        $this->set_opt[CURLOPT_SSLKEY] = $value;
+        return $this;
+    }
+
+    function sslKeyPasswd($value) {
+        $this->set_opt[CURLOPT_SSLKEYPASSWD] = $value;
+        return $this;
+    }
+
+    function sslKeyType($value) {
+        $this->set_opt[CURLOPT_SSLKEYTYPE] = $value;
+        return $this;
+    }
+
+    function url($value) {
+        $this->set_opt[CURLOPT_URL] = $value;
+        return $this;
+    }
+
+    function userAgent($value) {
+        $this->set_opt[CURLOPT_USERAGENT] = $value;
+        return $this;
+    }
+
+    function userPwd($value) {
+        $this->set_opt[CURLOPT_USERPWD] = $value;
         return $this;
     }
 
