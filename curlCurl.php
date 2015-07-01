@@ -489,6 +489,11 @@ class Curl {
         $this->set_opt[CURLOPT_SSLKEYTYPE] = $value;
         return $this;
     }
+    
+    function sslVerifyPeer($value = TRUE) {
+        $this->set_opt[CURLOPT_SSL_VERIFYPEER] = $value;
+        return $this;
+    }
 
     function url($value) {
         $this->set_opt[CURLOPT_URL] = $value;
