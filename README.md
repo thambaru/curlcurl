@@ -4,7 +4,7 @@ This is a helper class to make your code more clean by curling cURL just into a 
 
 With version 2.0 all options can be chain-loaded.
 
-##Usage
+## Usage
 
 Require curlCurl.php and create object:
 
@@ -14,11 +14,11 @@ Then chain all options and curl!
 
 `$curlCurl->url("http://thambaru.com")->curl();`
 
-##Output
+## Output
 
 Same output of curl exec.
 
-##Notes
+## Notes
 
 * All options are in camelCase.
 * Option values like "CURLSSH_AUTH_PUBLICKEY" can be directly set as `PUBLICKEY`.
